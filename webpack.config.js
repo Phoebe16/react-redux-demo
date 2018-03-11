@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'eval-source-map',  // 方便本地在浏览器调试
     entry: __dirname + '/public/src/main.js',
     output: {
-        path: __dirname + '/build',
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
     module: {
@@ -13,10 +13,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react']
-                }
+                loader: 'babel-loader'
             },
             {
                 test: /\.css$/,

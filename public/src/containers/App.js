@@ -29,7 +29,7 @@ class Counter extends Component {
     }
 
     changeInfo() {
-        this.props.dispatch(actions2.changInfo('Come on'));
+        this.props.dispatch(actions2.changeInfo('Come on'));
     }
 
     render() {
@@ -43,7 +43,7 @@ class Counter extends Component {
                     <button onClick={this.reduce}>-</button>
                     {'   '}
                 </p>
-                <p onClick={this.changInfo}>this.props.infoMember:
+                <p onClick={this.changeInfo}>this.props.infoMember:
                 {this.props.infoMember.id}--{this.props.infoMember.script}</p>
             </div>
         )
