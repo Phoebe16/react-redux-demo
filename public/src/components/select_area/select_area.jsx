@@ -172,7 +172,7 @@ export class SelectArea extends Component {
           cityIndex: index,
           districtIndex: hasDefaultArea ? districtIndex : 0,
           city: this.getName('city', provinceIndex, index),
-          district: this.getName('district', provinceIndex, cityIndex, 0),
+          district: this.getName('district', provinceIndex, index, 0),
           districtList: this.getList('district', provinceIndex, index)
         });
         break;
@@ -217,11 +217,12 @@ export class SelectArea extends Component {
         name = allAreaInfo[provinceIndex].city[cityIndex].area[districtIndex]
         break
     }
-    return name
+    return name === '请选择' ? '' : name;
   }
 
   confirm() {
     const { province, city, district } = this.state;
+    if (!province || !city || !district) return alert('请选择完整所在地区~');
     console.log(province, city, district);
   }
 
